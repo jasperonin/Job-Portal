@@ -7,7 +7,7 @@ A simple PHP project that allows the user to search/apply for a job. Apply anony
 ### Technology used
 
 1. Language used: PHP 8.0*
-2  Database used: MySQL 5.0*
+2. Database used: MySQL 5.0*
 3. User Interface Design: HTML | CSS | BOOTSTRAP 5.0 | JQuery & JQuery UI
 4. Local server: XAMPP
 
