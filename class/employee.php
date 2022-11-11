@@ -34,6 +34,34 @@ class Employee extends Database{
          }
     }
 
+    function loginAdmin($email,$password) {
+      $sql = "SELECT * FROM user_account WHERE email = '$email'";
+
+      if($result = $this->conn->query($sql)) {
+         if($result -> num_rows == 1){
+            $row = $result->fetch_assoc();
+            if(password_verify($password, $row['password1'])){
+               session_start();
+               $_SESSION['id'] = $row['id'];
+               $_SESSION['first_name'] = $row['first_name'];
+               $_SESSION['last_name'] = $row['last_name'];
+               $_SESSION['role'] = $row['role'] == 'admin';
+
+               if($_SESSION['role'] == 'admin') {
+                  header("location: ../views/employer-profile.php");
+                  exit;
+               }
+            }
+            else {
+               echo "<div class='h4 text-center bg-warning fw-bold text-danger'> Incorrect Password. </div>".$this->conn->error;
+            }
+         }
+         else {
+            echo "<div class='h4 text-center bg-warning fw-bold text-danger'> Email not found. </div>".$this->conn->error;
+         }
+      }
+    }
+
     function loginApplicant($email,$password) {
       $sql = "SELECT * FROM user_account WHERE email = '$email'";
 
@@ -45,12 +73,17 @@ class Employee extends Database{
                $_SESSION['id'] = $row['id'];
                $_SESSION['first_name'] = $row['first_name'];
                $_SESSION['last_name'] = $row['last_name'];
-               $_SESSION['role'] = $row['role'] == 'user';
+               $_SESSION['role'] = $row['role'];
 
                if($_SESSION['role'] == 'user') {
                   header("location: ../views/applicant-profile.php");
+                  exit;
                }
-               exit;
+
+               if($_SESSION['role'] == 'admin') {
+                  header("location: ../views/employer-profile.php");
+                  exit;
+               }
             }
             else {
                echo "<div class='h4 text-center bg-warning fw-bold text-danger'> Incorrect Password. </div>".$this->conn->error;

@@ -32,7 +32,7 @@ body{
                 <h2 class="card-title h3 fw-bold text-center">Employer Login</h2>
             </div>
             <div class="card-body">
-                <form action="#" method="post">
+                <form action="../action/admin-login.php" method="post">
                     <label for="email" class="form-label fw-bold fs-5">Email *</label>
                     <input type="email" name="email" id="email" class="form-control mb-2" placeholder="email@email.com" required> 
 

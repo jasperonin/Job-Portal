@@ -36,6 +36,9 @@ body{
     if($_SESSION['role'] == 'user'){
         header("location: applicant-profile.php");
     }
+    if($_SESSION['role'] == 'admin'){
+        header("location: employer-profile.php");
+    }
 
 
 ?>
