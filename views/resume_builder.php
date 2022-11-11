@@ -30,17 +30,17 @@ $employee = new Employee;
                   <div class="row">
                     <div class="col-4">
                       <label for="first_name" class="form-label small">First Name</label>
-                      <input type="text" name="first_name" id="first_name" class="form-control">
+                      <input type="text" name="first_name" id="first_name" class="form-control" required>
                     </div>
                     
                     <div class="col-4">          
                       <label for="last_name" class="form-label small">Last Name</label>
-                      <input type="text" name="last_name" id="last_name" class="form-control">
+                      <input type="text" name="last_name" id="last_name" class="form-control" required>
                     </div>
 
                     <div class="col-4">          
                       <label for="email" class="form-label small">Email</label>
-                      <input type="text" name="email" id="middle_name" class="form-control">
+                      <input type="text" name="email" id="middle_name" class="form-control" required>
                     </div>
                   </div>
 
@@ -48,12 +48,12 @@ $employee = new Employee;
                   <div class="row mt-2">
                     <div class="col-4">
                       <label for="dob" class="form-label small">Date of Birth</label>
-                      <input type="date" name="dob" id="dob" class="form-control">
+                      <input type="date" name="dob" id="dob" class="form-control" required>
                     </div>
                     
                     <div class="col-4">          
                       <label for="gender" class="form-label small">Gender</label>
-                      <select name="gender" id="gender" class="form-select">
+                      <select name="gender" id="gender" class="form-select" required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                       </select>
@@ -61,7 +61,7 @@ $employee = new Employee;
 
                     <div class="col-4">          
                       <label for="civil_status" class="form-label small">Civil Status</label>
-                      <input type="text" name="civil_status" id="civil_status" class="form-control">
+                      <input type="text" name="civil_status" id="civil_status" class="form-control" required>
                     </div>
                   </div>
 
@@ -73,12 +73,12 @@ $employee = new Employee;
                     
                     <div class="col-4">          
                       <label for="weight" class="form-label small">Weight (kg)</label>
-                      <input type="number" name="weight" id="weight" class="form-control" min="0" max="300">
+                      <input type="number" name="weight" id="weight" class="form-control" min="0" max="300" required>
                     </div>
 
                     <div class="col-4">          
                       <label for="nationality" class="form-label small">Nationality</label>
-                      <input type="text" name="nationality" id="nationality" class="form-control">
+                      <input type="text" name="nationality" id="nationality" class="form-control" required>
                     </div>
                   </div>
                   
@@ -86,7 +86,7 @@ $employee = new Employee;
                   <h3 class="h4">Contact Details</h3>
                     <div class="col">   
                       <label for="phone" class="form-label small">Phone number</label>
-                      <input type="text" name="phone" id="phone" class="form-control" min="0" max="300">
+                      <input type="text" name="phone" id="phone" class="form-control" min="0" max="300" required>
                     </div>
                   </div>
 
@@ -94,17 +94,17 @@ $employee = new Employee;
                   <h3 class="h4">Address Details</h3>
                   <div class="col-6">   
                       <label for="country" class="form-label small">Country</label>
-                      <input type="text" name="country" id="country" class="form-control">
+                      <input type="text" name="country" id="country" class="form-control" required>
                     </div>
 
                     <div class="col-6">   
                       <label for="province" class="form-label small">Province / State</label>
-                      <input type="text" name="province" id="province" class="form-control">
+                      <input type="text" name="province" id="province" class="form-control" required>
                     </div>
 
                     <div class="col">
                       <label for="street" class="form-label small">Street Address</label>
-                      <input type="text" name="street" id="street" class="form-control">
+                      <input type="text" name="street" id="street" class="form-control" required>
                     </div>
                   </div>
                   <input type="submit" data-bs-toggle="modal" data-bs-target="btn_save" id="btn_save" value="Submit" class="btn btn-outline-primary w-100 mt-3" name="btn_save">
